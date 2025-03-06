@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-export default function Page() {
+export default function Contact() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function Page() {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial state
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);

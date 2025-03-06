@@ -12,7 +12,7 @@ export default function Home() {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial state
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
