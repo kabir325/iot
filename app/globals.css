@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+      --radius: 0.5rem;
+      --background: 207 3% 81%; /* #CDCECF */
+      --foreground: 210 7% 11%; /* #191B1D */
+      --card: 0 0% 100%; /* White */
+      --card-foreground: 210 7% 11%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 210 7% 11%;
+      --primary: 210 7% 11%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 0 0% 95%;
+      --secondary-foreground: 210 7% 11%;
+      --muted: 0 0% 90%;
+      --muted-foreground: 210 7% 40%;
+      --accent: 210 100% 70%; /* Light blue for better readability */
+      --accent-foreground: 210 7% 11%;
+      --destructive: 0 0% 50%;
+      --destructive-foreground: 0 0% 100%;
+      --border: 0 0% 90%;
+      --input: 0 0% 95%;
+      --ring: 210 7% 11%;
+      --chart-1: 12 76% 61%;
+      --chart-2: 173 58% 39%;
+      --chart-3: 197 37% 24%;
+      --chart-4: 43 74% 66%;
+      --chart-5: 27 87% 67%;
+  }
+.dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+      --accent: 210 100% 70%; /* Light blue for better readability */
+      --accent-foreground: 210 40% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+      --chart-1: 220 70% 50%;
+      --chart-2: 160 60% 45%;
+      --chart-3: 30 80% 55%;
+      --chart-4: 280 65% 60%;
+      --chart-5: 340 75% 55%;
+  }
+}
+
+.black-bg{
+  @apply bg-black text-white;
+}
+
+.heading-main-box {
+  @apply bg-black py-12;
+}
+
+.heading {
+  @apply text-4xl md:text-5xl font-bold text-center text-white;
+}
+.sub-heading{
+  @apply text-5xl font-bold text-center  py-9;
+}
+
+.navbar{
+  @apply px-5 py-3 bg-inherit border-black border-y-2;
+}
+
+.logo{
+  @apply flex justify-between items-center;
+}
+
+.nav-links {
+  @apply flex items-center gap-5 text-inherit;
+}
+
+.about-section{
+  @apply w-full  flex justify-center items-center gap-x-8 px-12 py-10;
+  flex-direction: row
+}
+
+.image-section {
+  @apply flex flex-col items-center text-center ;
+}
+
+.profile-image{
+  @apply rounded-md border border-black rounded-md;
+}
+
+.name {
+  @apply font-bold mt-2;
+}
+
+.text-section {
+  @apply max-w-[50%] text-left;
+}
+
+.bio-heading{
+  @apply font-bold text-lg text-left;
+}
+
+.bio{
+  @apply font-mono text-left;
+}
+
+.skills{
+  @apply min-h-[70vh];
+}
+
+.skills-box {
+  @apply flex flex-wrap gap-4 p-4 content-center justify-center;
+}
+
+.skill-box {
+  @apply bg-white/10 backdrop-blur-[10px] border border-white/20 rounded-2xl px-8 py-3 transition-all duration-300 ease-in-out font-semibold text-base shadow-sm cursor-pointer whitespace-nowrap flex-none m-1;
+}
+
+.skill-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.education-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .skills-scattered {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .skill-box {
+    @apply px-4 py-2 text-[0.9rem];
+  }
+}
+
+.x-trans-box{
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.x-trans-box:hover {
+    transform: translateX(3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+.education-timeline {
+  @apply flex flex-col gap-8 p-4 max-w-[800px] mx-auto;
+}
+
+.education-block {
+  @apply bg-white rounded-xl p-8 shadow-md border-2 border-black transition-all duration-300 ease-in-out;
+}
+
+.education-block .degree {
+  @apply text-xl font-bold text-gray-800 mb-2;
+}
+
+.education-block .institution {
+  @apply text-gray-600 text-lg inline-block mr-2;
+}
+
+.education-block .year {
+  @apply text-gray-500 text-base inline-block;
+}
+
+.education-block .score {
+  @apply text-gray-600 text-base mt-2;
+}
+
+@media (max-width: 600px) {
+  .about-section {
+      flex-direction: column;
+      gap: 1.25rem;
+  }
+  .contact-section{
+    flex-direction: column;
+    gap: 1.25erm;
+  }
+  .text-section {
+      @apply max-w-full text-center;
+  }
+
+  .dynamic-image {
+    @apply w-[50vw] max-w-[220px] min-w-[180px];
+  }
+}
+
+.contact-form, .contact-info {
+  @apply bg-[#CDCECF] backdrop-blur-sm p-8 border border-gray-700/50 rounded-xl;
+}
+
+.contact-form h2, .contact-info h2 {
+  @apply text-2xl font-bold mb-6 text-black text-center;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-800 mb-1;
+}
+
+.form-input {
+  @apply w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 outline-none transition-all;
+}
+
+.submit-button {
+  @apply w-full bg-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 border border-gray-600/50;
+}
+
+.info-section {
+  @apply space-y-6 w-fit mx-auto text-center;
+}
+
+.info-heading {
+  @apply text-lg font-bold text-gray-800 mb-2 px-4 py-2 ;
+}
+.info-text {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.info-link {
+  @apply text-gray-700 hover:text-black transition-colors;
+}
+
+.social-links {
+  @apply flex gap-4 justify-center items-center;
+}
+
+.social-links .info-link {
+  @apply text-gray-700 hover:text-black border-b border-transparent hover:border-black transition-all duration-200 flex items-center gap-2;
+}
+
+.pink_container {
+  @apply bg-[#CDCECF] py-12;
+}
+
+.project-card {
+  @apply bg-[#CDCECF] rounded-xl p-6 space-y-4 shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.project-card h3 {
+  @apply text-2xl font-bold text-gray-800;
+}
+
+.project-card p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.tech-stack {
+  @apply flex flex-wrap gap-2;
+}
+
+.tech-item {
+  @apply bg-white/80 px-3 py-1 rounded-full text-sm text-gray-700 backdrop-blur-sm border border-white/20;
+}
+
+
+
+.dynamic-image {
+  @apply w-[30vw] max-w-[240px] min-w-[200px] transition-all duration-300;
+}
+
+@media (max-width: 600px) {
+  .dynamic-image {
+    @apply w-[50vw] max-w-[220px] min-w-[180px];
+  }
+}
+
+body {
+  font-family: var(--font-fragment-mono);
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
