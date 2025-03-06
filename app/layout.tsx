@@ -31,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={fragmentMono.variable}
-      >
+      <body className={fragmentMono.variable}>
         {children}
       </body>
     </html>
