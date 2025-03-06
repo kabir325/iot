@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import path from "path";
+import { usePathname } from "next/navigation";
 
 const fragmentMono = localFont({
   src:[
@@ -18,6 +19,7 @@ const fragmentMono = localFont({
   variable: "--font-fragment-mono",
 });
 
+const path = usePathname();
 
 export const metadata: Metadata = {
   title: "Kabir Sahu",

@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Page() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const handleResize = () => {
