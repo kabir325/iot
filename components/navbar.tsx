@@ -25,7 +25,7 @@ const Navbar = () => {
         <nav className="logo">
           <Link href="/">
             <Image 
-              src="/logo.png" 
+              src="/Logo.png" 
               alt="logo" 
               width={144} 
               height={30}
