@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 const fragmentMono = localFont({
   src: [
     {
-      path: "../public/fonts/FragmentMono-Regular.ttf",
+      path: "./fonts/FragmentMono-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/FragmentMono-Italic.ttf",
+      path: "./fonts/FragmentMono-Italic.ttf",
       weight: "400",
       style: "italic",
     }
