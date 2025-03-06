@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { projectsData } from '@/data/projects';
 
 export default async function ProjectsPage() {

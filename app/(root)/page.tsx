@@ -10,6 +10,7 @@ export default function Home() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 530);
     };
+    console.log(isMobile);
 
     window.addEventListener('resize', handleResize);
     handleResize();
