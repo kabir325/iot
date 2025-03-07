@@ -32,42 +32,42 @@ export default function Contact() {
           <div className="contact-form">
             <h2>Drop your details!</h2>
             <form className="space-y-6" action="https://formsubmit.co/kabirsahu725@gmail.com" method="POST">
-              <div>
                 <label htmlFor='name' className='form-label'>Name</label>
                 <input 
                   type='text' 
                   id='name' 
+                  name='name'
                   className='form-input'
                   placeholder='Your name'
+                  required
                 />
-              </div>
-              <div>
                 <label htmlFor='email' className='form-label'>Email</label>
                 <input 
                   type='email' 
                   id='email' 
+                  name='email'
                   className='form-input'
                   placeholder='your.email@example.com'
+                  required
                 />
-              </div>
-              <div>
                 <label htmlFor='phone' className='form-label'>Phone Number</label>
                 <input 
                   type='tel' 
                   id='phone' 
+                  name='phone'
                   className='form-input'
                   placeholder='Your phone number'
+                  required
                 />
-              </div>
-              <div>
                 <label htmlFor='message' className='form-label'>Message</label>
                 <textarea 
                   id='message' 
+                  name='message'
                   rows={4} 
                   className='form-input'
                   placeholder='Your message'
+                  required
                 ></textarea>
-              </div>
               <button 
                 type='submit' 
                 className='submit-button'

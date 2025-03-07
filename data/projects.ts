@@ -16,27 +16,34 @@ export const projectsData = [
   },
   {
     id: 'project-id-3',
+    name: 'Smart Resume Screening System',
+    description: 'Developed an AI-powered resume screening application using BERT and NLP to classify resumes and match them with the most relevant job descriptions. Implemented a PDF-based GUI for users to upload resumes, which are then processed using machine learning models to rank job matches. Built a fully automated pipeline for model training, ensuring seamless execution. Integrated Kaggle API for dataset retrieval and used Tkinter for GUI development, enhancing user interaction.',
+    githubLink: 'https://github.com/kabir325/Hangman-Game',
+    techStack: ['Python','ML','BERT','PyQt6','kaggle']
+  },
+  {
+    id: 'project-id-4',
     name: 'TERMINAL-BASED FILE SYSTEM ',
     description: 'Built a C-based file system utilizing B-Trees, enabling functionalities like file and directory creation, deletion, and editing through a terminal interface.',
     githubLink: 'https://github.com/kabir325/File_system_in_C',
     techStack: ['C','Data Structures']
   },
   {
-    id: 'project-id-4', 
+    id: 'project-id-5', 
     name: 'TERMINAL-BASED JOB SCHEDULER ',
     description: 'Developed a C-based terminal application implementing scheduling algorithms such as FIFO, LIFO, Round Robin, and Priority Scheduling, allowing efficient job execution in a command-line environment. ',
     githubLink: 'https://github.com/kabir325/Job_Schedular_In_C',
     techStack: ['C','Data Structures']
   },
   {
-    id: 'project-id-5',
+    id: 'project-id-6',
     name: 'A DOCUMENT CHECKER ',
     description: 'Designed a security-focused application inspired by Danger Zone to generate safe, malware-free PDFs from potentially harmful documents and images.',
     githubLink: 'https://github.com/kabir325/Document_Checker',
     techStack: ['Python']
   },
   {
-    id: 'project-id-6',
+    id: 'project-id-7',
     name: 'Hangman Game',
     description: 'Created a terminal based hangman game using data structures coded in C',
     githubLink: 'https://github.com/kabir325/Hangman-Game',
