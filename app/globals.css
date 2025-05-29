@@ -98,6 +98,19 @@
   @apply rounded-md border border-black rounded-md;
 }
 
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}
+
 .name {
   @apply font-bold mt-2;
 }
@@ -210,9 +223,6 @@
   @apply block text-sm font-medium text-gray-800 mb-1;
 }
 
-.form-input {
-  @apply w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 outline-none transition-all;
-}
 
 .submit-button {
   @apply w-full bg-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 border border-gray-600/50;

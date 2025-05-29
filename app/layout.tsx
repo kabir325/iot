@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const fragmentMono = localFont({
   src: [
@@ -20,8 +21,8 @@ const fragmentMono = localFont({
 
 
 export const metadata: Metadata = {
-  title: "Kabir Sahu",
-  description: "Portfolio of Kabir Sahu",
+  title: "IoT For Everyone",
+  description: "IoT playground",
 };
 
 export default function RootLayout({
@@ -31,8 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fragmentMono.variable}>
-        {children}
+      <body className={`${fragmentMono.variable} antialiased`}>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
