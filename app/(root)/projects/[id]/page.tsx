@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 // Mock data for simulation
@@ -29,7 +29,7 @@ const mockProject = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   return {
-    title: `Project - ${params.id}`,
+    title: `Project - ${(await params).id}`,
   };
 }
 
@@ -47,11 +47,11 @@ export default async function ProjectDetails({ params }: PageProps) {
               <h1 className="text-3xl font-bold">{project.name}</h1>
 
               <div className="flex gap-3">
-                <Link href={`/projects/${params.id}/edit`}>
+                <Link href={`/projects/${(await params).id}/edit`}>
                   <Button variant="outline">Edit</Button>
                 </Link>
 
-                <Link href={`/workspace/${params.id}`}>
+                <Link href={`/workspace/${(await params).id}`}>
                   <Button>Simulate</Button>
                 </Link>
               </div>
