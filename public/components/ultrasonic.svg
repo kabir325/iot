@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="20" y="30" width="60" height="30" rx="2" fill="#2ecc71" />
+  <!-- Ultrasonic Sensors -->
+  <circle cx="30" cy="45" r="8" fill="#373737" stroke="#f7f7f7" stroke-width="1" />
+  <circle cx="70" cy="45" r="8" fill="#373737" stroke="#f7f7f7" stroke-width="1" />
+  <!-- Sensor Details -->
+  <circle cx="30" cy="45" r="5" fill="#f7f7f7" />
+  <circle cx="70" cy="45" r="5" fill="#f7f7f7" />
+  <!-- Pins -->
+  <g fill="#f7f7f7">
+    <rect x="30" y="65" width="2" height="10" />
+    <rect x="40" y="65" width="2" height="10" />
+    <rect x="50" y="65" width="2" height="10" />
+    <rect x="60" y="65" width="2" height="10" />
+  </g>
+  <!-- Labels -->
+  <text x="31" y="72" font-family="Arial" font-size="3" fill="#2ecc71">VCC</text>
+  <text x="41" y="72" font-family="Arial" font-size="3" fill="#2ecc71">TRIG</text>
+  <text x="51" y="72" font-family="Arial" font-size="3" fill="#2ecc71">ECHO</text>
+  <text x="61" y="72" font-family="Arial" font-size="3" fill="#2ecc71">GND</text>
+  <!-- Text -->
+  <text x="50" y="25" font-family="Arial" font-size="5" text-anchor="middle" fill="#2ecc71">HC-SR04</text>
+  <text x="50" y="85" font-family="Arial" font-size="4" text-anchor="middle" fill="#2ecc71">Ultrasonic Sensor</text>
+  <!-- Sound Waves -->
+  <g stroke="#f7f7f7" stroke-width="0.5" fill="none">
+    <path d="M35,45 Q40,35 45,45" />
+    <path d="M37,45 Q40,38 43,45" />
+    <path d="M55,45 Q60,35 65,45" />
+    <path d="M57,45 Q60,38 63,45" />
+  </g>
+</svg>

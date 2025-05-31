@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Sensor Board -->
+  <rect x="30" y="20" width="40" height="30" rx="2" fill="#27ae60" />
+  <!-- Sensor Chip -->
+  <rect x="40" y="25" width="20" height="10" rx="1" fill="#2c3e50" />
+  <!-- Sensor Prongs -->
+  <rect x="35" y="50" width="5" height="30" rx="1" fill="#7f8c8d" />
+  <rect x="60" y="50" width="5" height="30" rx="1" fill="#7f8c8d" />
+  <!-- Sensor Details -->
+  <g fill="none" stroke="#f7f7f7" stroke-width="0.5">
+    <line x1="35" y1="55" x2="40" y2="55" />
+    <line x1="35" y1="60" x2="40" y2="60" />
+    <line x1="35" y1="65" x2="40" y2="65" />
+    <line x1="35" y1="70" x2="40" y2="70" />
+    <line x1="35" y1="75" x2="40" y2="75" />
+    <line x1="60" y1="55" x2="65" y2="55" />
+    <line x1="60" y1="60" x2="65" y2="60" />
+    <line x1="60" y1="65" x2="65" y2="65" />
+    <line x1="60" y1="70" x2="65" y2="70" />
+    <line x1="60" y1="75" x2="65" y2="75" />
+  </g>
+  <!-- Water Droplets -->
+  <g fill="#3498db" opacity="0.7">
+    <circle cx="45" cy="60" r="2" />
+    <circle cx="50" cy="70" r="3" />
+    <circle cx="55" cy="65" r="2" />
+  </g>
+  <!-- Pins -->
+  <g fill="#f7f7f7">
+    <rect x="35" y="10" width="2" height="10" />
+    <rect x="45" y="10" width="2" height="10" />
+    <rect x="55" y="10" width="2" height="10" />
+  </g>
+  <!-- Labels -->
+  <text x="36" y="17" font-family="Arial" font-size="3" fill="#27ae60">VCC</text>
+  <text x="46" y="17" font-family="Arial" font-size="3" fill="#27ae60">GND</text>
+  <text x="56" y="17" font-family="Arial" font-size="3" fill="#27ae60">SIG</text>
+  <!-- Text -->
+  <text x="50" y="40" font-family="Arial" font-size="4" text-anchor="middle" fill="#f7f7f7">SOIL</text>
+  <text x="50" y="90" font-family="Arial" font-size="5" text-anchor="middle" fill="#27ae60">Soil Moisture</text>
+  <text x="50" y="95" font-family="Arial" font-size="3" text-anchor="middle" fill="#27ae60">Sensor</text>
+</svg>

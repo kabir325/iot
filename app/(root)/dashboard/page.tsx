@@ -147,11 +147,11 @@ export default function Dashboard() {
         {/* Project grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {sortedProjects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+            <div key={project._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
               <div className="relative h-48 bg-gray-200">
                 <div className="absolute top-2 right-2 z-10">
                   <button 
-                    onClick={() => toggleFavorite(project.id)}
+                    onClick={() => toggleFavorite(project._id)}
                     className="p-1.5 rounded-full bg-white/80 hover:bg-white transition-colors"
                   >
                     {project.isFavorite ? (
@@ -166,21 +166,30 @@ export default function Dashboard() {
                   </button>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Fallback to a placeholder if the image doesn't exist */}
-                  <div className="w-32 h-32 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>
-                  </div>
+                  {project.image ? (
+                    <Image 
+                      src={project.image} 
+                      alt={project.name}
+                      width={300}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-32 h-32 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </div>
               
               <div className="p-4">
                 <h3 className="font-bold text-lg mb-1">{project.name}</h3>
                 <div className="flex items-center text-sm text-gray-500 mb-2">
-                  <span>Created {project.createdOn}</span>
+                  <span>Created {new Date(project.createdAt).toLocaleDateString()}</span>
                   <span className="mx-2">•</span>
-                  <span>{project.componentCount} components</span>
+                  <span>{project.componentsUsed?.length || 0} components</span>
                 </div>
                 
                 {project.description && (
@@ -188,7 +197,7 @@ export default function Dashboard() {
                 )}
                 
                 <Link 
-                  href={`/projects/${project.id}`}
+                  href={`/workspace/${project._id}`}
                   className="block w-full text-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
                   Open

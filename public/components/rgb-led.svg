@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- LED Body -->
+  <circle cx="50" cy="40" r="15" fill="#ecf0f1" opacity="0.8" />
+  <!-- LED Dome -->
+  <ellipse cx="50" cy="40" rx="15" ry="10" fill="#ecf0f1" opacity="0.5" />
+  <!-- RGB Colors -->
+  <g opacity="0.7">
+    <path d="M50,40 L40,30 A15,15 0 0,1 60,30 Z" fill="#e74c3c" /> <!-- Red -->
+    <path d="M50,40 L60,30 A15,15 0 0,1 60,50 Z" fill="#2ecc71" /> <!-- Green -->
+    <path d="M50,40 L60,50 A15,15 0 0,1 40,50 Z" fill="#3498db" /> <!-- Blue -->
+  </g>
+  <!-- Light Reflection -->
+  <circle cx="45" cy="35" r="3" fill="white" />
+  <circle cx="48" cy="32" r="1" fill="white" />
+  <!-- Pins -->
+  <g fill="#7f8c8d">
+    <rect x="35" y="55" width="2" height="25" />
+    <rect x="45" y="55" width="2" height="25" />
+    <rect x="55" y="55" width="2" height="25" />
+    <rect x="65" y="55" width="2" height="25" />
+  </g>
+  <!-- Labels -->
+  <text x="36" y="85" font-family="Arial" font-size="3" fill="#7f8c8d">GND</text>
+  <text x="46" y="85" font-family="Arial" font-size="3" fill="#e74c3c">R</text>
+  <text x="56" y="85" font-family="Arial" font-size="3" fill="#2ecc71">G</text>
+  <text x="66" y="85" font-family="Arial" font-size="3" fill="#3498db">B</text>
+  <!-- Text -->
+  <text x="50" y="20" font-family="Arial" font-size="5" text-anchor="middle" fill="#34495e">RGB LED</text>
+</svg>

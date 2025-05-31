@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="20" y="20" width="60" height="40" rx="2" fill="#34495e" />
+  <!-- Display Area -->
+  <rect x="25" y="25" width="50" height="30" fill="#111" />
+  <!-- Display Content -->
+  <g fill="#f1c40f">
+    <text x="50" y="35" font-family="monospace" font-size="4" text-anchor="middle">OLED 128x64</text>
+    <rect x="30" y="40" width="40" height="1" />
+    <text x="50" y="45" font-family="monospace" font-size="3" text-anchor="middle">Temperature: 25°C</text>
+    <text x="50" y="50" font-family="monospace" font-size="3" text-anchor="middle">Humidity: 45%</text>
+  </g>
+  <!-- Pins -->
+  <g fill="#f7f7f7">
+    <rect x="25" y="65" width="2" height="10" />
+    <rect x="35" y="65" width="2" height="10" />
+    <rect x="45" y="65" width="2" height="10" />
+    <rect x="55" y="65" width="2" height="10" />
+  </g>
+  <!-- Labels -->
+  <text x="26" y="72" font-family="Arial" font-size="3" fill="#34495e">GND</text>
+  <text x="36" y="72" font-family="Arial" font-size="3" fill="#34495e">VCC</text>
+  <text x="46" y="72" font-family="Arial" font-size="3" fill="#34495e">SCL</text>
+  <text x="56" y="72" font-family="Arial" font-size="3" fill="#34495e">SDA</text>
+  <!-- Text -->
+  <text x="50" y="85" font-family="Arial" font-size="5" text-anchor="middle" fill="#34495e">OLED Display</text>
+  <text x="50" y="90" font-family="Arial" font-size="3" text-anchor="middle" fill="#34495e">128x64 I2C</text>
+</svg>

@@ -9,50 +9,68 @@ import { useAuth } from '@/contexts/AuthContext';
 // Mock data for published projects
 const mockPublishedProjects = [
   {
-    id: 'project-1',
+    _id: 'project-1',
     name: 'Smart Home Automation',
-    thumbnail: '/project-thumbnails/weather-station.png',
+    image: '/project-thumbnails/weather-station.png',
     description: 'A comprehensive IoT system for home automation using ESP32 and various sensors.',
-    author: 'John Doe',
-    publishedDate: 'May 15, 2025',
+    createdBy: { name: 'John Doe' },
+    createdAt: '2025-05-15T10:30:00Z',
     likes: 42,
     views: 128,
-    tags: ['home-automation', 'esp32', 'sensors']
+    tags: ['home-automation', 'esp32', 'sensors'],
+    isPublic: true
   },
   {
-    id: 'project-2',
+    _id: 'project-2',
     name: 'Plant Monitoring System',
-    thumbnail: '/project-thumbnails/weather-station.png',
+    image: '/project-thumbnails/weather-station.png',
     description: 'Monitor soil moisture, light, and temperature for your plants with automatic watering system.',
-    author: 'Jane Smith',
-    publishedDate: 'April 22, 2025',
+    createdBy: { name: 'Jane Smith' },
+    createdAt: '2025-04-22T14:15:00Z',
     likes: 36,
     views: 95,
-    tags: ['agriculture', 'arduino', 'automation']
+    tags: ['agriculture', 'arduino', 'automation'],
+    isPublic: true
   },
   {
-    id: 'project-3',
+    _id: 'project-3',
     name: 'Air Quality Monitor',
-    thumbnail: '/project-thumbnails/weather-station.png',
+    image: '/project-thumbnails/weather-station.png',
     description: 'Track indoor air quality with this ESP8266-based system that measures PM2.5, CO2, temperature, and humidity.',
-    author: 'Alex Johnson',
-    publishedDate: 'June 3, 2025',
+    createdBy: { name: 'Alex Johnson' },
+    createdAt: '2025-06-03T09:45:00Z',
     likes: 28,
     views: 76,
-    tags: ['air-quality', 'esp8266', 'health']
+    tags: ['air-quality', 'esp8266', 'health'],
+    isPublic: true
   },
   {
-    id: 'project-4',
+    _id: 'project-4',
     name: 'Smart Irrigation Controller',
-    thumbnail: '/project-thumbnails/weather-station.png',
+    image: '/project-thumbnails/weather-station.png',
     description: 'Automate your garden irrigation with weather forecast integration and soil moisture sensing.',
-    author: 'Michael Brown',
-    publishedDate: 'May 30, 2025',
+    createdBy: { name: 'Michael Brown' },
+    createdAt: '2025-05-30T16:20:00Z',
     likes: 19,
     views: 64,
-    tags: ['irrigation', 'raspberry-pi', 'garden']
+    tags: ['irrigation', 'raspberry-pi', 'garden'],
+    isPublic: true
   },
 ];
+
+// Type definition for projects
+interface Project {
+  _id: string;
+  name: string;
+  description: string;
+  image?: string;
+  createdAt: string;
+  createdBy: { name: string };
+  likes: number;
+  views: number;
+  tags: string[];
+  isPublic: boolean;
+}
 
 export default function ExplorePage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -74,7 +92,7 @@ export default function ExplorePage() {
       filtered = filtered.filter(project => 
         project.name.toLowerCase().includes(lowerCaseSearch) ||
         project.description.toLowerCase().includes(lowerCaseSearch) ||
-        project.author.toLowerCase().includes(lowerCaseSearch) ||
+        project.createdBy.name.toLowerCase().includes(lowerCaseSearch) ||
         project.tags.some(tag => tag.toLowerCase().includes(lowerCaseSearch))
       );
     }
@@ -160,15 +178,24 @@ export default function ExplorePage() {
         {projects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map(project => (
-              <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:scale-[1.02]">
+              <div key={project._id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:scale-[1.02]">
                 <div className="relative h-48 w-full bg-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                      </svg>
+                  {project.image ? (
+                    <Image 
+                      src={project.image} 
+                      alt={project.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 
                 <div className="p-5">
@@ -182,7 +209,7 @@ export default function ExplorePage() {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-gray-500 mb-2">By {project.author} • {project.publishedDate}</p>
+                  <p className="text-sm text-gray-500 mb-2">By {project.createdBy.name} • {new Date(project.createdAt).toLocaleDateString()}</p>
                   
                   <p className="text-gray-700 mb-4 line-clamp-3">{project.description}</p>
                   
@@ -203,7 +230,7 @@ export default function ExplorePage() {
                       {project.views} views
                     </div>
                     
-                    <Link href={`/projects/${project.id}`}>
+                    <Link href={`/workspace/${project._id}`}>
                       <Button variant="outline" size="sm">
                         View Details
                       </Button>

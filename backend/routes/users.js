@@ -2,17 +2,20 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/Users');
+const User = require('../models/user');
 
-// Utility: sanitize user object to exclude passwordHash
+// Utility: sanitize user object to exclude sensitive data
 const sanitizeUser = (user) => ({
   _id: user._id,
   email: user.email,
   name: user.name,
+  tier: user.tier,
+  credits: user.credits,
+  purchasedCredits: user.purchasedCredits,
   isPremium: user.isPremium,
-  createdAt: user.createdAt,
+  settings: user.settings,
   projects: user.projects,
-  settings: user.settings
+  joinedAt: user.joinedAt,
 });
 
 // Signup Route
@@ -24,7 +27,15 @@ router.post('/signup', async (req, res) => {
     if (existing) return res.status(400).json({ error: 'Email already exists' });
 
     const passwordHash = await bcrypt.hash(password, 10);
-    const newUser = new User({ email, passwordHash, name });
+
+    const newUser = new User({
+      email,
+      name,
+      passwordHash,
+      tier: 'free',           // default tier
+      credits: 100,           // default credit allocation
+      isPremium: false,
+    });
 
     await newUser.save();
 
@@ -32,7 +43,7 @@ router.post('/signup', async (req, res) => {
 
     res.status(201).json({
       token,
-      user: sanitizeUser(newUser)
+      user: sanitizeUser(newUser),
     });
   } catch (err) {
     console.error('Signup Error:', err);
@@ -55,7 +66,7 @@ router.post('/login', async (req, res) => {
 
     res.status(200).json({
       token,
-      user: sanitizeUser(user)
+      user: sanitizeUser(user),
     });
   } catch (err) {
     console.error('Login Error:', err);

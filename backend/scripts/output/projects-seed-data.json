@@ -1,0 +1,144 @@
+{
+  "projects": [
+    {
+      "name": "Smart Home Automation",
+      "description": "A comprehensive IoT system for home automation using ESP32 and various sensors.",
+      "image": "/project-thumbnails/smart-home.png",
+      "componentsUsed": [],
+      "connections": {},
+      "notes": "This project demonstrates a basic smart home setup with temperature monitoring and appliance control.",
+      "versionHistory": [
+        {
+          "date": "2023-05-15T00:00:00.000Z",
+          "description": "Project created"
+        },
+        {
+          "date": "2023-05-20T00:00:00.000Z",
+          "description": "Added temperature sensors"
+        },
+        {
+          "date": "2023-05-25T00:00:00.000Z",
+          "description": "Implemented relay control"
+        }
+      ],
+      "isPublic": true,
+      "views": 128,
+      "likes": 42,
+      "tags": [
+        "home-automation",
+        "esp8266",
+        "sensors"
+      ],
+      "createdBy": "ObjectId(\"user_placeholder\")",
+      "createdAt": "2025-05-30T19:44:35.514Z"
+    },
+    {
+      "name": "Plant Monitoring System",
+      "description": "Monitor soil moisture, light, and temperature for your plants with automatic watering system.",
+      "image": "/project-thumbnails/plant-monitor.png",
+      "componentsUsed": [],
+      "connections": {},
+      "notes": "This system helps monitor plant health and automate watering based on soil conditions.",
+      "versionHistory": [
+        {
+          "date": "2023-04-22T00:00:00.000Z",
+          "description": "Project created"
+        },
+        {
+          "date": "2023-04-30T00:00:00.000Z",
+          "description": "Added soil moisture sensor"
+        }
+      ],
+      "isPublic": true,
+      "views": 95,
+      "likes": 36,
+      "tags": [
+        "agriculture",
+        "arduino",
+        "automation"
+      ],
+      "createdBy": "ObjectId(\"user_placeholder\")",
+      "createdAt": "2025-05-30T19:44:35.514Z"
+    },
+    {
+      "name": "Air Quality Monitor",
+      "description": "Track indoor air quality with this ESP8266-based system that measures PM2.5, CO2, temperature, and humidity.",
+      "image": "/project-thumbnails/air-quality.png",
+      "componentsUsed": [],
+      "connections": {},
+      "notes": "This project helps monitor indoor air quality to maintain a healthy living environment.",
+      "versionHistory": [
+        {
+          "date": "2023-06-03T00:00:00.000Z",
+          "description": "Project created"
+        },
+        {
+          "date": "2023-06-10T00:00:00.000Z",
+          "description": "Added temperature and humidity monitoring"
+        }
+      ],
+      "isPublic": true,
+      "views": 76,
+      "likes": 28,
+      "tags": [
+        "air-quality",
+        "esp8266",
+        "health"
+      ],
+      "createdBy": "ObjectId(\"user_placeholder\")",
+      "createdAt": "2025-05-30T19:44:35.514Z"
+    },
+    {
+      "name": "Smart Irrigation Controller",
+      "description": "Automate your garden irrigation with weather forecast integration and soil moisture sensing.",
+      "image": "/project-thumbnails/irrigation.png",
+      "componentsUsed": [],
+      "connections": {},
+      "notes": "This system optimizes water usage by only irrigating when necessary based on soil conditions and weather forecasts.",
+      "versionHistory": [
+        {
+          "date": "2023-05-30T00:00:00.000Z",
+          "description": "Project created"
+        },
+        {
+          "date": "2023-06-05T00:00:00.000Z",
+          "description": "Added weather API integration"
+        }
+      ],
+      "isPublic": true,
+      "views": 64,
+      "likes": 19,
+      "tags": [
+        "irrigation",
+        "raspberry-pi",
+        "garden"
+      ],
+      "createdBy": "ObjectId(\"user_placeholder\")",
+      "createdAt": "2025-05-30T19:44:35.514Z"
+    },
+    {
+      "name": "Private Project Example",
+      "description": "This is a private project that only the owner can see.",
+      "componentsUsed": [],
+      "notes": "This is just a test project that is set to private.",
+      "versionHistory": [
+        {
+          "date": "2025-05-30T19:44:35.447Z",
+          "description": "Project created"
+        }
+      ],
+      "isPublic": false,
+      "tags": [
+        "test",
+        "private"
+      ],
+      "createdBy": "ObjectId(\"user_placeholder\")",
+      "createdAt": "2025-05-30T19:44:35.514Z"
+    }
+  ],
+  "instructions": {
+    "usage": "This file contains seed data for projects. You can use it with the MongoDB shell or import it using mongoimport.",
+    "mongoShell": "Load this in MongoDB shell after replacing placeholder IDs with actual ObjectIds",
+    "nodeJs": "In Node.js, parse this file and replace placeholder IDs with actual ObjectIds from your database"
+  }
+}
